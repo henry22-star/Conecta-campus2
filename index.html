@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081426">
+  <title>Conecta Campus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <section id="loginScreen" class="login-screen">
+    <div class="login-visual">
+      <div class="brand">
+        <span class="brand-icon">CC</span>
+        <span>Conecta<span class="brand-light">Campus</span></span>
+      </div>
+
+      <div class="hero">
+        <span class="eyebrow">PORTAL ACADÊMICO INTEGRADO</span>
+        <h1>Seu campus.<br><span>Suas oportunidades.</span></h1>
+        <p>Um ambiente para conectar estudantes, professores, coordenação e gestão.</p>
+      </div>
+
+      <div class="visual-footer">
+        <span class="online-dot"></span>
+        Protótipo demonstrativo
+      </div>
+    </div>
+
+    <div class="login-area">
+      <div class="mobile-brand brand">
+        <span class="brand-icon">CC</span>
+        <span>Conecta<span class="brand-light">Campus</span></span>
+      </div>
+
+      <div class="login-card">
+        <span class="eyebrow">BEM-VINDO DE VOLTA</span>
+        <h2>Acesse sua conta</h2>
+        <p class="muted">Entre usando uma conta de demonstração.</p>
+
+        <form id="loginForm">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" placeholder="usuario@conecta.local"
+                 autocomplete="username" required>
+
+          <label for="password">Senha</label>
+          <div class="password-field">
+            <input id="password" type="password" placeholder="Digite sua senha"
+                   autocomplete="current-password" required>
+            <button type="button" id="togglePassword" class="password-toggle"
+                    aria-label="Mostrar ou ocultar senha">◉</button>
+          </div>
+
+          <button type="submit" class="btn primary full">
+            Entrar no portal <span>→</span>
+          </button>
+          <p id="loginError" class="error" aria-live="polite"></p>
+        </form>
+
+        <details class="demo-box">
+          <summary>Ver contas de demonstração</summary>
+          <div id="demoAccounts" class="demo-list"></div>
+        </details>
+
+        <p class="security-note">
+          🔒 Não utilize senhas ou informações pessoais reais neste protótipo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div id="appShell" class="app-shell hidden">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand sidebar-brand">
+        <span class="brand-icon">CC</span>
+        <span>Conecta<span class="brand-light">Campus</span></span>
+      </div>
+
+      <div class="menu-label">ÁREA DE TRABALHO</div>
+      <nav id="sideNav" class="side-nav" aria-label="Menu principal"></nav>
+
+      <div class="sidebar-footer">
+        <div class="local-status">
+          <span class="online-dot"></span>
+          Ambiente local
+        </div>
+        <button id="logoutBtn" class="nav-item logout">
+          <span class="nav-icon">↪</span>
+          Sair da conta
+        </button>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <button id="mobileMenu" class="icon-button" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb">
+          <span>Conecta Campus</span>
+          <span class="separator">/</span>
+          <strong id="pageCrumb">Painel</strong>
+        </div>
+        <div class="topbar-right">
+          <span id="topDate" class="top-date"></span>
+          <div class="user-chip">
+            <div id="userAvatar" class="avatar">U</div>
+            <div class="user-info">
+              <strong id="userName">Usuário</strong>
+              <small id="userRole">Perfil</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main id="content" class="content"></main>
+
+      <footer class="app-footer">
+        <span>Conecta Campus © <span id="year"></span></span>
+        <span>Protótipo com dados demonstrativos</span>
+      </footer>
+    </section>
+  </div>
+
+  <dialog id="itemDialog" class="modal">
+    <form id="itemForm">
+      <div class="modal-header">
+        <div>
+          <span id="modalEyebrow" class="eyebrow">CADASTRO</span>
+          <h2 id="modalTitle">Novo registro</h2>
+        </div>
+        <button type="button" id="closeModal" class="icon-button"
+                aria-label="Fechar">×</button>
+      </div>
+      <div id="modalFields"></div>
+      <div class="modal-actions">
+        <button type="button" id="cancelModal" class="btn secondary">Cancelar</button>
+        <button type="submit" class="btn primary">Salvar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
